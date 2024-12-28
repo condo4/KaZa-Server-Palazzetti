@@ -1,0 +1,3 @@
+module org.kazoe.palazzetti
+plugin PalazzettiPlugin
+KaZaPalazzetti 1.0 KaZaPalazzetti.qml
