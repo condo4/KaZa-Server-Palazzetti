@@ -47,7 +47,7 @@ Palazzetti::Palazzetti(QObject *parent)
 {
     Q_D(Palazzetti);
     QObject::connect(&d->m_timer,        &QTimer::timeout,                this, &Palazzetti::refresh);
-    qDebug() << "Palazzetti created";
+    qDebug() << "Palazzetti integration loaded";
 
     QSettings settings;
     d->m_globalCounter = settings.value("Palazzetti/lastempty").toInt();
@@ -91,16 +91,19 @@ void Palazzetti::refresh()
 {
     Q_D(Palazzetti);
     // Autentication
-    QUrl url(QString("http://%1:%2/cgi-bin/sendmsg.lua?cmd=GET+ALLS").arg(d->m_hostname).arg(d->m_port));
-    QNetworkRequest request(url);
-    QNetworkReply *reply = d->m_manager.get(request);
+    if(!d->m_hostname.isEmpty())
+    {
+        QUrl url(QString("http://%1:%2/cgi-bin/sendmsg.lua?cmd=GET+ALLS").arg(d->m_hostname).arg(d->m_port));
+        QNetworkRequest request(url);
+        QNetworkReply *reply = d->m_manager.get(request);
 
-    QObject::connect(reply, &QIODevice::readyRead, this, &Palazzetti::_processResponse);
-    QObject::connect(reply, &QNetworkReply::errorOccurred, [reply](){
-        qWarning() << "Can't access " << reply->errorString();
-        qWarning() << "in " << reply->url();
-        reply->deleteLater();
-    });
+        QObject::connect(reply, &QIODevice::readyRead, this, &Palazzetti::_processResponse);
+        QObject::connect(reply, &QNetworkReply::errorOccurred, [reply](){
+            qWarning() << "Can't access " << reply->errorString();
+            qWarning() << "in " << reply->url();
+            reply->deleteLater();
+        });
+    }
 }
 
 void Palazzetti::_processResponse() {

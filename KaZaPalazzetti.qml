@@ -10,78 +10,78 @@ QtObject {
     property alias hostname: root.palazzetti.hostname
     property alias refreshRate: root.palazzetti.refreshRate
 
-    property KzObject setPoint: KzObject {
+    property KaZaObject setPoint: KaZaObject {
         name: root.name + ".setPoint"
         onValueChanged: {
             palazzetti.setPoint(value)
         }
     }
 
-    property KzObject setPower: KzObject {
+    property KaZaObject setPower: KaZaObject {
         name: root.name + ".setPower"
         onValueChanged: {
             palazzetti.setPower(value)
         }
     }
 
-    property KzObject setFan: KzObject {
+    property KaZaObject setFan: KaZaObject {
         name: root.name + ".setFan"
         onValueChanged: {
             palazzetti.setFan(value)
         }
     }
 
-    property KzObject currentSetPoint: KzObject {
+    property KaZaObject currentSetPoint: KaZaObject {
         name: root.name + ".currentSetPoint"
         value: palazzetti.currentSetPoint
     }
 
-    property KzObject feeder: KzObject {
+    property KaZaObject feeder: KaZaObject {
         name: root.name + ".feeder"
         value: palazzetti.feeder
     }
 
-    property KzObject globalCounter: KzObject {
+    property KaZaObject globalCounter: KaZaObject {
         name: root.name + ".globalCounter"
         value: palazzetti.globalCounter
     }
 
-    property KzObject lastempty: KzObject {
+    property KaZaObject lastempty: KaZaObject {
         name: root.name + ".lastempty"
         value: palazzetti.lastempty
     }
 
-    property KzObject temperatureIn: KzObject {
+    property KaZaObject temperatureIn: KaZaObject {
         name: root.name + ".temperatureIn"
         value: palazzetti.temperatureIn
     }
 
-    property KzObject temperatureOut: KzObject {
+    property KaZaObject temperatureOut: KaZaObject {
         name: root.name + ".temperatureOut"
         value: palazzetti.temperatureOut
     }
 
-    property KzObject temperatureExhaust: KzObject {
+    property KaZaObject temperatureExhaust: KaZaObject {
         name: root.name + ".temperatureExhaust"
         value: palazzetti.temperatureExhaust
     }
 
-    property KzObject state: KzObject {
+    property KaZaObject state: KaZaObject {
         name: root.name + ".state"
         value: palazzetti.state
     }
 
-    property KzObject alarm: KzObject {
+    property KaZaObject alarm: KaZaObject {
         name: root.name + ".alarm"
         value: palazzetti.alarm
     }
 
-    property KzObject power: KzObject {
+    property KaZaObject power: KaZaObject {
         name: root.name + ".power"
         value: palazzetti.power
     }
 
-    property KzObject roomfan: KzObject {
+    property KaZaObject roomfan: KaZaObject {
         name: root.name + ".roomfan"
         value: palazzetti.roomfan
     }
