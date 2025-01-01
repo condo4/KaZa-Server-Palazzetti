@@ -43,6 +43,7 @@ target_include_directories(PalazzettiPlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 install(TARGETS PalazzettiPlugin DESTINATION ${QML_MODULE_INSTALL_PATH}/org/kazoe/palazzetti)
 install(FILES qmldir DESTINATION ${QML_MODULE_INSTALL_PATH}/org/kazoe/palazzetti)
+install(FILES KaZaPalazzetti.qml DESTINATION ${QML_MODULE_INSTALL_PATH}/org/kazoe/palazzetti)
 
 
 if(BUILD_DEBIAN_PACKAGE)
