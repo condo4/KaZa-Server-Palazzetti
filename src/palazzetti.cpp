@@ -123,7 +123,8 @@ void Palazzetti::_processResponse() {
     QJsonObject rootObject = jsonDocument.object();
     if( !rootObject.value("SUCCESS").toBool())
     {
-        qWarning() << "Request fail";
+        qWarning() << "Palazzetti Request fail" << rootObject;
+        refresh();
     }
 
     QJsonObject infoObject = rootObject.value("INFO").toObject();
