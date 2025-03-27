@@ -25,8 +25,8 @@ class PalazzettiPrivate {
     int m_currentSetPoint;
     int m_feeder;
     int m_globalCounter;
-    float m_temperatureIn;
-    float m_temperatureOut;
+    float m_temperatureRoom;
+    float m_temperatureDevice;
     float m_temperatureExhaust;
     int m_state;
     bool m_alarm;
@@ -193,17 +193,17 @@ void Palazzetti::_processResponse() {
         }
 
         fdata = data.value("T1").toDouble();
-        if (d->m_temperatureIn != fdata)
+        if (d->m_temperatureRoom != fdata)
         {
-            d->m_temperatureIn = fdata;
-            emit temperatureInChanged(d->m_temperatureIn);
+            d->m_temperatureRoom = fdata;
+            emit temperatureRoomChanged(d->m_temperatureRoom);
         }
 
         fdata = data.value("T2").toDouble();
-        if (d->m_temperatureOut != fdata)
+        if (d->m_temperatureDevice != fdata)
         {
-            d->m_temperatureOut = fdata;
-            emit temperatureOutChanged(d->m_temperatureOut);
+            d->m_temperatureDevice = fdata;
+            emit temperatureDeviceChanged(d->m_temperatureDevice);
         }
 
         fdata = data.value("T3").toDouble();
@@ -264,16 +264,16 @@ int Palazzetti::globalCounter() const
     return d->m_globalCounter;
 }
 
-float Palazzetti::temperatureIn() const
+float Palazzetti::temperatureRoom() const
 {
     Q_D(const Palazzetti);
-    return d->m_temperatureIn;
+    return d->m_temperatureRoom;
 }
 
-float Palazzetti::temperatureOut() const
+float Palazzetti::temperatureDevice() const
 {
     Q_D(const Palazzetti);
-    return d->m_temperatureOut;
+    return d->m_temperatureDevice;
 }
 
 float Palazzetti::temperatureExhaust() const

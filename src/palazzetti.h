@@ -16,8 +16,8 @@ class Palazzetti : public QObject
     Q_PROPERTY(int feeder READ feeder NOTIFY feederChanged)
     Q_PROPERTY(int globalCounter READ globalCounter NOTIFY globalCounterChanged)
     Q_PROPERTY(int lastempty READ lastempty NOTIFY lastemptyChanged)
-    Q_PROPERTY(float temperatureIn READ temperatureIn NOTIFY temperatureInChanged)
-    Q_PROPERTY(float temperatureOut READ temperatureOut NOTIFY temperatureOutChanged)
+    Q_PROPERTY(float temperatureRoom READ temperatureRoom NOTIFY temperatureRoomChanged)
+    Q_PROPERTY(float temperatureDevice READ temperatureDevice NOTIFY temperatureDeviceChanged)
     Q_PROPERTY(float temperatureExhaust READ temperatureExhaust NOTIFY temperatureExhaustChanged)
     Q_PROPERTY(int state READ state NOTIFY stateChanged)
     Q_PROPERTY(bool alarm READ alarm NOTIFY alarmChanged)
@@ -41,8 +41,8 @@ public:
     int currentSetPoint() const;
     int feeder() const;
     int globalCounter() const;
-    float temperatureIn() const;
-    float temperatureOut() const;
+    float temperatureRoom() const;
+    float temperatureDevice() const;
     float temperatureExhaust() const;
     int state() const;
     bool alarm() const;
@@ -64,8 +64,8 @@ signals:
     void currentSetPointChanged(int currentSetPoint);
     void feederChanged(int feeder);
     void globalCounterChanged(int globalCounter);
-    void temperatureInChanged(int temperatureIn);
-    void temperatureOutChanged(int temperatureOut);
+    void temperatureRoomChanged(int temperatureRoom);
+    void temperatureDeviceChanged(int temperatureDevice);
     void temperatureExhaustChanged(int temperatureExhaust);
     void stateChanged(int state);
     void alarmChanged(bool alarm);

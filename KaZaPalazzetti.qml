@@ -51,14 +51,14 @@ QtObject {
         value: palazzetti.lastempty
     }
 
-    property KaZaObject temperatureIn: KaZaObject {
-        name: root.name + ".temperatureIn"
-        value: palazzetti.temperatureIn
+    property KaZaObject temperatureDevice: KaZaObject {
+        name: root.name + ".temperatureDevice"
+        value: palazzetti.temperatureDevice
     }
 
-    property KaZaObject temperatureOut: KaZaObject {
-        name: root.name + ".temperatureOut"
-        value: palazzetti.temperatureOut
+    property KaZaObject temperatureRoom: KaZaObject {
+        name: root.name + ".temperatureRoom"
+        value: palazzetti.temperatureRoom
     }
 
     property KaZaObject temperatureExhaust: KaZaObject {
